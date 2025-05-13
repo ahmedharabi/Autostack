@@ -1,2 +1,6 @@
-dockerfile
-node_modules
+node_modules/
+*.log
+.env
+Dockerfile
+.autostack
+.gitignore
