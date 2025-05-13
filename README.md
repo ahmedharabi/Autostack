@@ -18,7 +18,7 @@
 
 ##  About
 
-DevOps Config Generator is a command-line tool (and soon a web app) that helps developers and teams scaffold boilerplate DevOps configs for their projects. Built for speed and flexibility, it supports a range of languages, frameworks, and cloud tools.
+DevOps Config Generator is a command-line tool that helps developers and teams scaffold boilerplate DevOps configs for their projects. Built for speed and flexibility, it supports a range of languages, frameworks, and cloud tools.
 
 ## Features
 
