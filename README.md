@@ -1,6 +1,9 @@
 <h1 align="center">
-  ⚙️ DevOps Config Generator
+  Autostack
 </h1>
+<h4 align="center">
+  ⚙️ DevOps Config Generator
+</h4>
 
 <p align="center">
   Generate production-ready Dockerfiles, GitHub Actions, Kubernetes YAMLs, and more — in seconds.
@@ -35,19 +38,19 @@ DevOps Config Generator is a command-line tool (and soon a web app) that helps d
     <tbody>
       <tr>
         <td>Dockerfile support</td>
-        <td>✅ Completed</td>
+        <td>🚧 In progress</td>
       </tr>
       <tr>
         <td>GitHub Actions CI/CD generator</td>
-        <td>✅ Completed</td>
+        <td>Planned</td>
       </tr>
       <tr>
         <td>Kubernetes YAMLs</td>
-        <td>✅ Completed</td>
+        <td>Planned</td>
       </tr>
       <tr>
         <td>Terraform templates</td>
-        <td>🚧 In progress</td>
+        <td>Planned</td>
       </tr>
       <tr>
         <td>Helm charts</td>
