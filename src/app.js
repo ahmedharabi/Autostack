@@ -1,31 +1,14 @@
 #!/usr/bin/env node
 import {program} from "commander";
 import * as clack from "@clack/prompts"
+import {generateConfig} from "../service/groqService.js"
 import fs from "node:fs"
 import pkg from 'enquirer';
 const { AutoComplete } = pkg;
 import {addToFile} from "../utils/filsOps.js"
 
-async function autocompletePrompt({ message, choices }) {
-    return new Promise((resolve) => {
-        const rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout,
-            completer: (line) => {
-                const completions = choices.filter((choice) =>
-                    choice.toLowerCase().startsWith(line.toLowerCase())
-                );
-                return [completions.length ? completions : choices, line];
-            },
-        });
 
-        clack.log.message(message); // Use Clack's styled message
-        rl.question('> ', (answer) => {
-            rl.close();
-            resolve(answer);
-        });
-    });
-}
+
 program
     .name("autostack")
     .description("cli tool to automate infrastructure files boilerplate")
@@ -121,6 +104,7 @@ program
                         name: 'framework',
                         message: 'Pick a framework',
                         choices: [
+                            'Express',
                             'React',
                             'Next.js',
                             'Remix',
@@ -174,10 +158,18 @@ program
                     if (err) throw err;
                     const raw=fs.readFileSync("autostack.json","utf-8");
                     const config=JSON.parse(raw);
-                    config.docker=true;
+                    const language=config.language
+                    const framework=config.framework
+                    const dockerfile=generateConfig({language,framework}).then((data)=>{
+                        fs.writeFileSync("Dockerfile",data);
+                        console.log(data)
+                    });
 
-                    fs.writeFileSync("autostack.json",JSON.stringify(config,null,2));
-                    log.success('docker file created!');
+
+
+
+                    //fs.writeFileSync("autostack.json",JSON.stringify(config,null,2));
+
                 })
             }
 

@@ -15,8 +15,10 @@
     "@types/node": "^22.15.17",
     "clui": "^0.3.6",
     "commander": "^13.1.0",
+    "dotenv": "^16.5.0",
     "enquirer": "^2.4.1",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "groq-sdk": "^0.21.0"
   },
   "bin": {
     "autostack": "src/app.js"

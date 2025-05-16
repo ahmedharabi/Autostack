@@ -1,4 +1,4 @@
 {
-  "language": "Go",
-  "framework": "Next.js"
+  "language": "Node.js",
+  "framework": "Express"
 }
